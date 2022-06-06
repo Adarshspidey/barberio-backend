@@ -9,7 +9,7 @@ const shop = {
     JoiShopCoveImageurl: JoiRequiredFileUrl("Shop Cover Image URL"),
     JoiShopLogoImageurl: JoiRequiredFileUrl( "Shop Logo "),
     JoiShopImagesUrls: JoiFileUrls("Shop image Urls")
-    
+
 }
 
 

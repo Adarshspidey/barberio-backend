@@ -40,7 +40,7 @@ const JoiPhone = (Entity = "Phone")=>
     })
 
     const JoiRequiredAddress = (Entity?: string) => JoiAddress(Entity).required();
-    
+
     const JoiLocation = Joi.object().keys({
     latitude: Joi.number().required(),
     longitude: Joi.number().required()
@@ -60,7 +60,7 @@ const JoiPhone = (Entity = "Phone")=>
 
   const JoiRequiredOtp = (Entity?: string) => JoiOtp(Entity).required();
 
-  const JoiFileUrl = (Entity : string = "File URL") => 
+  const JoiFileUrl = (Entity : string = "File URL") =>
   Joi.string()
   .regex(/^[A-Za-z][A-Za-z.\s]+$/)
     .min(3)
@@ -82,6 +82,6 @@ const JoiPhone = (Entity = "Phone")=>
     "array.include.ReqiredUnknowns" : `${Entity}s is not a valid Input`,
     "array.unique": `${Entity}s cannot be same`
   });
- 
+
 export { JoiName, JoiRequiredName, JoiPhone, JoiAddress, JoiRequiredAddress, JoiRequiredPhone,JoiRequiredRegistrNumber, JoiOtp, JoiRequiredOtp, JoiLocation, JoiFileUrl, JoiRequiredFileUrl, JoiFileUrls};
 
