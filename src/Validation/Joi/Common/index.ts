@@ -70,7 +70,7 @@ const JoiPhone = (Entity = "Phone")=>
 
   const JoiFileUrl = (Entity : string = "File URL") =>
   Joi.string()
-  
+
     .min(3)
     .max(50)
   .messages({

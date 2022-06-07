@@ -11,4 +11,4 @@ const createService = async(data: ServiceCreateCommand,shopId:String) => {
     if (result) return true;
     return false;
   };
-  export {createService } 
+  export {createService }

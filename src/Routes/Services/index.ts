@@ -4,7 +4,7 @@ import addServiceValidation from "./Validation/addService"
 const router = express.Router();
 
 
-router.post("/add-service",addServiceValidation, CreateService) 
+router.post("/add-service",addServiceValidation, CreateService)
 
 router.get("/update-service", (req, res) => {
   res.send("Update service");

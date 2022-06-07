@@ -7,5 +7,5 @@ export const AddLocation = async (req:RequestWithAuth ,res:Response)=>{
     const result = addLocation(req.body,req.user.id);
     if (!result) return serverError(res, "Faild to update location");
     return successResponse(res, "Location updated successfuly", {});
-    
+
 }
