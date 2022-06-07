@@ -5,4 +5,12 @@ type ShopCreateCommand = {
   ownerName: string;
 };
 
-export { ShopCreateCommand };
+type ShopLocationUpdateCommand = {
+  address: string;
+  location:{
+    lattitude: number;
+    longitude: number;
+  }
+}
+
+export { ShopCreateCommand ,ShopLocationUpdateCommand};

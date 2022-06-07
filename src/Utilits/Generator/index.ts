@@ -5,5 +5,8 @@ const getRandomInt = (min: number, max: number) => {
 };
 
 const generateOtp = () => getRandomInt(100000, 999999);
+const generateId =()=>
+  Math.random().toString(36).slice(-8) + Math.random().toString(36).slice(-8);
 
-export { generateOtp };
+
+export { generateOtp , generateId};

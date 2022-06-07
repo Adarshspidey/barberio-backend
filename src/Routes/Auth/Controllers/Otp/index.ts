@@ -3,6 +3,8 @@ import { badRequest } from "../../../../Utilits/Http";
 import { VerifyByOtp } from "../../../../Model/Otp";
 import { generateToken } from "../../../../Utilits/Jwt";
 import { successResponse, serverError } from "../../../../Utilits/Http";
+import { permissions } from "../../../../Config";
+import { getShopByPhone } from "../../../../Model/Shop";
 
 export const IsOtpVerified = async (
   req: Request,
@@ -21,7 +23,9 @@ export const IsOtpVerified = async (
 };
 
 const Otp = async (req: Request, res: Response) => {
-  const token = generateToken({ phone: req.body.phone, permissions: ["user"] });
+  const shop = await getShopByPhone(req.body.phone);
+  
+  const token = generateToken({ id: shop.shopId, permissions: [permissions.User] });
   return successResponse(res, "Yes", { token });
 };
 

@@ -1,7 +1,10 @@
 import { NextFunction, Request, Response } from "express";
-import {  getShopByPhone } from "../../../../Model/Shop";
-import { badRequest } from "../../../../Utilits/Http";
+import { RequestWithAuth } from "../../../../Types/Request";
+import {  addLogo, getShopByPhone } from "../../../../Model/Shop";
+import { badRequest, serverError, successResponse } from "../../../../Utilits/Http";
 
-export const AddLogo = async (req:Request ,res:Response)=>{
-    res.send("Logo")
+export const AddLogo = async (req:RequestWithAuth ,res:Response)=>{
+    const result = addLogo(req.body.logoImageurl,req.user.id);
+    if (!result) return serverError(res, "Faild to upload logo");
+    return successResponse(res, "Logo uploaded successfuly", {});
 }

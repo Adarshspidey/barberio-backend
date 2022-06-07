@@ -46,6 +46,14 @@ const JoiPhone = (Entity = "Phone")=>
     longitude: Joi.number().required()
   }).required();
 
+  const JoiRate = (Entity:string)=> Joi.number().messages({
+    "number.base": `${Entity} must be a number`,
+  }
+  ).required();
+
+  const JoiTime = (Entity:string)=>Joi.number().messages({
+    "number.base": `${Entity} must be a number`,
+  }).required();
   const JoiOtp = (Entity = "OTP")=>
   Joi.string()
   .length(6)
@@ -62,12 +70,10 @@ const JoiPhone = (Entity = "Phone")=>
 
   const JoiFileUrl = (Entity : string = "File URL") =>
   Joi.string()
-  .regex(/^[A-Za-z][A-Za-z.\s]+$/)
+  
     .min(3)
     .max(50)
   .messages({
-    "string.min": `${Entity} must be at least 3 characters`,
-    "string.max": `${Entity} must be at most 50 characters`,
     "string.empty": `${Entity} cannot be empty`,
     "any.required": `${Entity} is required`,
   })
@@ -83,5 +89,17 @@ const JoiPhone = (Entity = "Phone")=>
     "array.unique": `${Entity}s cannot be same`
   });
 
-export { JoiName, JoiRequiredName, JoiPhone, JoiAddress, JoiRequiredAddress, JoiRequiredPhone,JoiRequiredRegistrNumber, JoiOtp, JoiRequiredOtp, JoiLocation, JoiFileUrl, JoiRequiredFileUrl, JoiFileUrls};
+  const JoiDescription = (Entity = "Address") =>
+    Joi.string()
+    .messages({
+      "string.empty": `${Entity} cannot be empty`,
+      "any.required": `${Entity} is required`,
+    })
+
+    const JoiRequiredDescription = (Entity?: string) => JoiDescription(Entity).required();
+
+
+
+
+export { JoiName, JoiRate, JoiTime, JoiDescription,JoiRequiredDescription, JoiRequiredName, JoiPhone, JoiAddress, JoiRequiredAddress, JoiRequiredPhone,JoiRequiredRegistrNumber, JoiOtp, JoiRequiredOtp, JoiLocation, JoiFileUrl, JoiRequiredFileUrl, JoiFileUrls};
 

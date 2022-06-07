@@ -1,6 +1,6 @@
 type TokenType = {
-  name: string;
-  permissions: string;
+  id: string;
+  permissions: [string];
 };
 
 export { TokenType };

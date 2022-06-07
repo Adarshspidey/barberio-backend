@@ -12,10 +12,6 @@ router.post("/sign-up", SignUpValidation, SignUp);
 
 router.post("/login", LoginValidation, IsUserExist, Login);
 
-router.post("/login", (req, res) => {
-  res.send("Login");
-});
-
 router.get("/forgot-password", (req, res) => {
   res.send("Forgot password");
 });

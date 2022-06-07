@@ -1,7 +1,7 @@
 import { sign, verify } from "jsonwebtoken";
 import { TokenType } from "../../Types/Token";
 
-const generateToken = (data: {}) => {
+const generateToken = (data: TokenType) => {
   const accessToken = sign(
     {
       ...data,
