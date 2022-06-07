@@ -5,13 +5,12 @@ import Router from "./Routes";
 
 dotenv.config();
 
-
 (async () => {
   try {
     await mongoose.connect("mongodb://127.0.0.1:27017/Barberio");
-   console.log("Connect to database");
+    console.log("Connect to database");
   } catch (error) {
-   console.log(error);
+    console.log(error);
   }
 })();
 

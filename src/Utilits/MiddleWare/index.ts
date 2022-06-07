@@ -1,6 +1,8 @@
 import { NextFunction, Response, Request } from "express";
 import Joi from "joi";
-import { badRequest } from "../Http";
+import { RequestWithAuth } from "../../Types/Request";
+import { verifyToken } from "../../Utilits/Jwt";
+import { badRequest, unauthorizedError } from "../Http";
 import { getErrorDetails } from "../Map";
 
 const joiValidateMiddleware = (
@@ -14,4 +16,35 @@ const joiValidateMiddleware = (
   next();
 };
 
-export { joiValidateMiddleware };
+const authMiddleware =
+  (permission: string) =>
+  async (req: RequestWithAuth, res: Response, next: NextFunction) => {
+    if (!req.headers.authorization)
+      return unauthorizedError(res, {
+        error: "No authorized header found",
+      });
+
+    const token = req.headers.authorization.split(" ")[1];
+    if (!token)
+      return unauthorizedError(res, {
+        error: "No token found",
+      });
+
+    try {
+      const decoded = await verifyToken(token);
+
+      if (!decoded.permissions.includes(permission)) {
+        return unauthorizedError(res, {
+          error: "You don't have permission to access this resource",
+        });
+      }
+      req.user = decoded;
+      return next();
+    } catch (error) {
+      return unauthorizedError(res, {
+        error: "Invalid Token!",
+      });
+    }
+  };
+
+export { joiValidateMiddleware, authMiddleware };

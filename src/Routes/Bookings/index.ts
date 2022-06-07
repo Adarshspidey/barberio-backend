@@ -1,7 +1,8 @@
 import express from "express";
+import { authMiddleware } from "../../Utilits/MiddleWare";
 const router = express.Router();
 
-router.get("/add-bookings", (req, res) => {
+router.get("/add-bookings", authMiddleware("user"), (req, res) => {
   res.send("Add Bookings");
 });
 
