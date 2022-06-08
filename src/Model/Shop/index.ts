@@ -38,9 +38,9 @@ const addImages = async(data:[string],shopId:string)=>{
 }
 
 const getShopByPhone = async (phone:string) =>{
-  const shop = await Shop.findOne({phone});
-  if(!shop) return null
-  return shop;
+  const result = await Shop.findOne({phone});
+  if(!result) return null
+  return result;
 }
 
 export { createShop, getShopByPhone,addLocation, addCoverImage, addLogo, addImages};

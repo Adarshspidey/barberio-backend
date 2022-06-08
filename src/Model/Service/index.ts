@@ -1,7 +1,7 @@
 import { generateId } from '../../Utilits/Generator';
 import Services from '../Schemas/services'
 import {ServiceCreateCommand} from '../../Types/Service';
-const createService = async(data: ServiceCreateCommand,shopId:String) => {
+const createService = async(data: ServiceCreateCommand,shopId:string) => {
     const id = generateId();
     const result = await Services.create({
       serviceId: id,

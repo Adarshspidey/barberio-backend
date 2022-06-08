@@ -54,6 +54,7 @@ const JoiPhone = (Entity = "Phone")=>
   const JoiTime = (Entity:string)=>Joi.number().messages({
     "number.base": `${Entity} must be a number`,
   }).required();
+  
   const JoiOtp = (Entity = "OTP")=>
   Joi.string()
   .length(6)

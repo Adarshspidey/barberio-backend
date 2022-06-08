@@ -8,7 +8,6 @@ import { AddLogo } from "./Controller/LogoImage/logo";
 import { AddImages } from "./Controller/Images";
 import ImageUrlValidation from './Validation/images'
 const router = express.Router();
-
 router.post("/add-location", LocationValidation, AddLocation);
 router.post("/add-cover-image",CoverImageValidation , AddCoverImage)
 router.post("/add-logo",LogoImageValidation, AddLogo)
