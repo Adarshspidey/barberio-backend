@@ -90,7 +90,7 @@ const JoiPhone = (Entity = "Phone")=>
     "array.unique": `${Entity}s cannot be same`
   });
 
-  const JoiDescription = (Entity = "Address") =>
+  const JoiDescription = (Entity = "Description") =>
     Joi.string()
     .messages({
       "string.empty": `${Entity} cannot be empty`,
@@ -100,7 +100,19 @@ const JoiPhone = (Entity = "Phone")=>
     const JoiRequiredDescription = (Entity?: string) => JoiDescription(Entity).required();
 
 
+    const JoiDate = (Entity = "Date") =>
+    Joi.string()
+    .messages({
+      "string.empty": `${Entity} cannot be empty`,
+      "any.required": `${Entity} is required`,
+    })
+
+    const JoiRequiredDate = (Entity?: string) => JoiDate(Entity).required();
+
+    const JoiSeatNumber = (Entity:string)=>Joi.number().messages({
+      "number.base": `${Entity} must be a number`,
+    }).required();
 
 
-export { JoiName, JoiRate, JoiTime, JoiDescription,JoiRequiredDescription, JoiRequiredName, JoiPhone, JoiAddress, JoiRequiredAddress, JoiRequiredPhone,JoiRequiredRegistrNumber, JoiOtp, JoiRequiredOtp, JoiLocation, JoiFileUrl, JoiRequiredFileUrl, JoiFileUrls};
+export { JoiName, JoiRate, JoiTime,JoiDate,JoiRequiredDate,JoiSeatNumber, JoiDescription,JoiRequiredDescription, JoiRequiredName, JoiPhone, JoiAddress, JoiRequiredAddress, JoiRequiredPhone,JoiRequiredRegistrNumber, JoiOtp, JoiRequiredOtp, JoiLocation, JoiFileUrl, JoiRequiredFileUrl, JoiFileUrls};
 
