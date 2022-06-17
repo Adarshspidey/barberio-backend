@@ -7,6 +7,8 @@ import { AddCoverImage } from "./Controller/CoverImage";
 import { AddLogo } from "./Controller/LogoImage/logo";
 import { AddImages } from "./Controller/Images";
 import ImageUrlValidation from './Validation/images'
+import SheduleWorktimeValidation from './Validation/workTime'
+import { SheduleWorktime } from "./Controller/Worktime";
 const router = express.Router();
 router.post("/add-location", LocationValidation, AddLocation);
 router.post("/add-cover-image",CoverImageValidation , AddCoverImage)
@@ -20,5 +22,8 @@ router.get("/change-phone", (req, res) => {
 router.get("/change-profile", (req, res) => {
   res.send("Change profile");
 });
+
+router.post("/shedule-worktime",SheduleWorktimeValidation,SheduleWorktime)
+
 
 export default router;

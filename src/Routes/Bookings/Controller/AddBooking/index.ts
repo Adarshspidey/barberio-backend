@@ -8,4 +8,3 @@ export const CreateBookings= async (req:RequestWithAuth ,res:Response)=>{
     if (!result) return serverError(res, "Faild to create Booking");
     return successResponse(res, "Booking created successfuly", {});
 }
- 
