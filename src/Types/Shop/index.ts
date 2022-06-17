@@ -13,4 +13,9 @@ type ShopLocationUpdateCommand = {
   }
 }
 
-export { ShopCreateCommand ,ShopLocationUpdateCommand};
+type SheduleWorkTimeCommand = {
+  day: string;
+  startTime: number;
+  endTime: number;
+}
+export { ShopCreateCommand ,ShopLocationUpdateCommand,SheduleWorkTimeCommand};
