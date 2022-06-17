@@ -25,8 +25,11 @@ export const IsOtpVerified = async (
 const Otp = async (req: Request, res: Response) => {
   const shop = await getShopByPhone(req.body.phone);
 
-  const token = generateToken({ id: shop.shopId, permissions: [permissions.User] });
-  return successResponse(res, "Yes", { token });
+  const token = generateToken({
+    id: shop.shopId,
+    permissions: [permissions.User],
+  });
+  return successResponse(res, "Otp Verified", { token });
 };
 
 export default Otp;
