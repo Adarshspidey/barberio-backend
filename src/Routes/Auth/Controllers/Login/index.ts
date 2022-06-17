@@ -1,7 +1,11 @@
 import { NextFunction, Request, Response } from "express";
 import { createOtp } from "../../../../Model/Otp";
 import { getShopByPhone } from "../../../../Model/Shop";
-import { badRequest } from "../../../../Utilits/Http";
+import {
+  badRequest,
+  successResponse,
+  serverError,
+} from "../../../../Utilits/Http";
 
 export const IsUserExist = async (
   req: Request,
@@ -21,7 +25,7 @@ export const IsUserExist = async (
 
 const Login = async (req: Request, res: Response) => {
   createOtp(req.body.phone);
-  res.send("Logged In");
+  return successResponse(res, "Login Successfully", {});
 };
 
 export default Login;
