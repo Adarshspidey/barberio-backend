@@ -12,7 +12,7 @@ export const IsUserExist = async (
   if (!result)
     return badRequest(res, "bad request", [
       {
-        messege: "User desnot exist",
+        message: "User desnot exist",
         path: "phone",
       },
     ]);
