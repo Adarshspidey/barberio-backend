@@ -2,7 +2,7 @@ import { NextFunction, Response, Request } from "express";
 import Joi from "joi";
 
 import Bookings from "../../../Validation/Joi/Bookings";
-import { joiValidateMiddleware } from "../../../Utilits/MiddleWare";
+import { joiValidateMiddleware } from "../../../Utils/MiddleWare";
 const schema = Joi.object({
     date:Bookings.JoiBookingDate,
     seatNumber:Bookings.JoiBookingSeatNumber,

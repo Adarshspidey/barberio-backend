@@ -1,4 +1,4 @@
-import { generateId } from '../../Utilits/Generator';
+import { generateId } from '../../Utils/Generator';
 import Bookings from '../Schemas/services'
 import { BookingCreateCommand } from '../../Types/Booking';
 const createBooking = async(data: BookingCreateCommand,shopId:string) => {
