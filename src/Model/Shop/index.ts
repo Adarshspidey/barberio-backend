@@ -1,5 +1,5 @@
 import { generateId } from "../../Utils/Generator";
-import { ShopCreateCommand ,ShopLocationUpdateCommand} from "../../Types/Shop";
+import { SheduleWorkTimeCommand, ShopCreateCommand ,ShopLocationUpdateCommand} from "../../Types/Shop";
 import shop from "../Schemas/shop";
 import Shop from "../Schemas/shop";
 
@@ -43,4 +43,10 @@ const getShopByPhone = async (phone:string) =>{
   return result;
 }
 
-export { createShop, getShopByPhone,addLocation, addCoverImage, addLogo, addImages};
+const shopWorkTime = async(data:SheduleWorkTimeCommand,shopId:string)=>{
+  const result = await Shop.findOneAndUpdate({shopId},{workTime:data});
+  if(result) return true;
+  return false;
+
+}
+export { createShop, getShopByPhone,addLocation, addCoverImage, addLogo, addImages, shopWorkTime };

@@ -7,7 +7,7 @@ const SignUp = async (req: Request, res: Response) => {
   const result = await createShop(req.body);
   createOtp(req.body.phone);
   if (!result) return serverError(res, "Hello");
-  return successResponse(res, "Yes", {});
+  return successResponse(res, "Shop Registered", {});
 };
 
 export default SignUp;

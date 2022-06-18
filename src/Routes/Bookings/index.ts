@@ -2,12 +2,13 @@ import express from "express";
 import { authMiddleware } from "../../Utils/MiddleWare";
 import {permissions } from "../../Config"
 const router = express.Router();
+import addBookingValidation from "./Validation/addBooking"
+import { CreateBookings } from "./Controller/AddBooking";
+router.post("/add-bookings", authMiddleware(permissions.User),addBookingValidation,CreateBookings)
 
-router.get("/add-bookings", authMiddleware(permissions.User), (req, res) => {
-  res.send("Add Bookings");
-});
 
 router.get("/update-bookings", (req, res) => {
+
   res.send("Update Bookings");
 });
 

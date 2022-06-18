@@ -5,6 +5,7 @@ import {
   JoiRequiredName,
   JoiRequiredPhone,
   JoiRequiredRegistrNumber,
+  JoiTime,
 } from "../Common";
 
 const shop = {
@@ -16,6 +17,8 @@ const shop = {
   JoiShopCoveImageurl: JoiRequiredFileUrl("Shop Cover Image URL"),
   JoiShopLogoImageurl: JoiRequiredFileUrl("Shop Logo "),
   JoiShopImagesUrls: JoiFileUrls("Shop image Urls"),
+  JoiStartTime: JoiTime("Start Time"),
+  JoiEndTime: JoiTime("End Time"),
 };
 
 export default shop;
