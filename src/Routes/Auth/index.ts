@@ -6,13 +6,9 @@ import LoginValidation from "./Validation/login";
 import OtpValidation from "./Validation/otp";
 import Login, { IsUserExist } from "./Controllers/Login";
 import Otp, { IsOtpVerified } from "./Controllers/Otp";
+import { validationSuccess } from "../../Utils/MiddleWare";
 
-router.post("/sign-up/validate", SignUpValidation,(req, res) => {
-  res.status(200).json({
-    message: "SignUp Validation Successfully",
-    data: {},
-  });
-  }
+router.post("/sign-up/validate", SignUpValidation,validationSuccess
 );
 router.post("/sign-up", SignUpValidation, SignUp);
 
