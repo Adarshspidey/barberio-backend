@@ -12,12 +12,7 @@ router.post("/sign-up/validate", SignUpValidation,validationSuccess
 );
 router.post("/sign-up", SignUpValidation, SignUp);
 
-router.post("/login/validate", LoginValidation, (req, res) => {
-  res.status(200).json({
-    message: "Login Validation Successfully",
-    data: {},
-  });
-});
+router.post("/login/validate", LoginValidation, validationSuccess);
 router.post("/login", LoginValidation, IsUserExist, Login);
 
 router.get("/forgot-password", (req, res) => {

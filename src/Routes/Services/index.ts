@@ -1,15 +1,11 @@
 import express from "express";
+import { validationSuccess } from "../../Utils/MiddleWare";
 import { CreateService } from "./Controller/AddService";
 import addServiceValidation from "./Validation/addService"
 const router = express.Router();
 
 
-router.post("/add-service/validate", addServiceValidation, (req, res) => {
-  res.status(200).json({
-    message: "Service Validation Successfully",
-    data: {},
-  });
-});
+router.post("/add-service/validate", addServiceValidation, validationSuccess);
 
 router.post("/add-service",addServiceValidation, CreateService)
 
