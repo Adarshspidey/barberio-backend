@@ -6,7 +6,7 @@ import ShopRouter from "./Shop";
 import ServicesRouter from "./Services";
 import NotificationsRouter from "./Notifications";
 import PaymentsRouter from "./Payments";
-import { authMiddleware } from "../Utilits/MiddleWare";
+import { authMiddleware } from "../Utils/MiddleWare";
 import { permissions } from "../Config";
 
 router.use("/auth", AuthRouter);

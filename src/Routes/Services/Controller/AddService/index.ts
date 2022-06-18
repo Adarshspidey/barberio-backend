@@ -1,6 +1,6 @@
 import { Response } from "express";
 import { RequestWithAuth } from "../../../../Types/Request";
-import { badRequest, serverError, successResponse } from "../../../../Utilits/Http";
+import { badRequest, serverError, successResponse } from "../../../../Utils/Http";
 import { createService } from "../../../../Model/Service";
 
 export const CreateService= async (req:RequestWithAuth ,res:Response)=>{

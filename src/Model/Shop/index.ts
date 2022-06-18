@@ -1,4 +1,4 @@
-import { generateId } from "../../Utilits/Generator";
+import { generateId } from "../../Utils/Generator";
 import { ShopCreateCommand ,ShopLocationUpdateCommand} from "../../Types/Shop";
 import shop from "../Schemas/shop";
 import Shop from "../Schemas/shop";

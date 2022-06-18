@@ -1,6 +1,6 @@
 import { NextFunction, Response, Request } from "express";
 import Joi from "joi";
-import { joiValidateMiddleware } from "../../../Utilits/MiddleWare";
+import { joiValidateMiddleware } from "../../../Utils/MiddleWare";
 import shop from "../../../Validation/Joi/Shop";
 const schema = Joi.object({
     coverImageurl: shop.JoiShopCoveImageurl

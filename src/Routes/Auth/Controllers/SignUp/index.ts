@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { createOtp } from "../../../../Model/Otp";
 import { createShop } from "../../../../Model/Shop";
-import { successResponse, serverError } from "../../../../Utilits/Http";
+import { successResponse, serverError } from "../../../../Utils/Http";
 
 const SignUp = async (req: Request, res: Response) => {
   const result = await createShop(req.body);

@@ -1,8 +1,8 @@
 import { NextFunction, Request, Response } from "express";
-import { badRequest } from "../../../../Utilits/Http";
+import { badRequest } from "../../../../Utils/Http";
 import { VerifyByOtp } from "../../../../Model/Otp";
-import { generateToken } from "../../../../Utilits/Jwt";
-import { successResponse, serverError } from "../../../../Utilits/Http";
+import { generateToken } from "../../../../Utils/Jwt";
+import { successResponse, serverError } from "../../../../Utils/Http";
 import { permissions } from "../../../../Config";
 import { getShopByPhone } from "../../../../Model/Shop";
 

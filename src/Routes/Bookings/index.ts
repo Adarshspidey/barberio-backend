@@ -1,5 +1,5 @@
 import express from "express";
-import { authMiddleware } from "../../Utilits/MiddleWare";
+import { authMiddleware } from "../../Utils/MiddleWare";
 import {permissions } from "../../Config"
 const router = express.Router();
 

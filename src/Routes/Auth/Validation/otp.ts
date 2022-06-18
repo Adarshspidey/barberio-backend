@@ -1,6 +1,6 @@
 import { NextFunction, Response, Request } from "express";
 import Joi from "joi";
-import { joiValidateMiddleware } from "../../../Utilits/MiddleWare";
+import { joiValidateMiddleware } from "../../../Utils/MiddleWare";
 import otp from "../../../Validation/Joi/Otp";
 const schema = Joi.object({
   otp: otp.JoiPhoneOtp,

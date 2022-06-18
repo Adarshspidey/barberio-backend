@@ -1,7 +1,7 @@
 import { NextFunction, Response, Request } from "express";
 import Joi from "joi";
 import { JoiLocation } from "../../../Validation/Joi/Common";
-import { joiValidateMiddleware } from "../../../Utilits/MiddleWare";
+import { joiValidateMiddleware } from "../../../Utils/MiddleWare";
 import shop from "../../../Validation/Joi/Shop";
 const schema = Joi.object({
     address:shop.JoiShopAddress,

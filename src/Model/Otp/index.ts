@@ -1,4 +1,4 @@
-import { generateOtp } from "../../Utilits/Generator";
+import { generateOtp } from "../../Utils/Generator";
 import Otp from "../Schemas/otp";
 
 const createOtp = async (phone: string) => {

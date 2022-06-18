@@ -1,6 +1,6 @@
 import { NextFunction, Response, Request } from "express";
 import Joi from "joi";
-import { joiValidateMiddleware } from "../../../Utilits/MiddleWare";
+import { joiValidateMiddleware } from "../../../Utils/MiddleWare";
 import service from "../../../Validation/Joi/Service";
 const schema = Joi.object({
     name: service.JoiServiceName,

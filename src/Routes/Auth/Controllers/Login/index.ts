@@ -1,7 +1,7 @@
 import { NextFunction, Request, Response } from "express";
 import { createOtp } from "../../../../Model/Otp";
 import { getShopByPhone } from "../../../../Model/Shop";
-import { badRequest } from "../../../../Utilits/Http";
+import { badRequest } from "../../../../Utils/Http";
 
 export const IsUserExist = async (
   req: Request,
