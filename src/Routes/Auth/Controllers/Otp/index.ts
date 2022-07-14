@@ -15,7 +15,7 @@ export const IsOtpVerified = async (
   if (!result)
     return badRequest(res, "bad request", [
       {
-        messege: "Otp Invalid",
+        message: "Sorry! you entered a wrong OTP!",
         path: "otp",
       },
     ]);
